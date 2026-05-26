@@ -1,14 +1,23 @@
+# import os
+
+# os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+# os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
+
 from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
+# from huggingface_hub import snapshot_download
 import re
 
-model_name = "Qwen/Qwen3-0.6B"
+
+# model_name = "Qwen/Qwen3-0.6B"
+model_name = './models/Qwen3-0.6B'
+
+# snapshot_download(model_name)
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    torch_dtype="auto",
+    dtype="auto",
     device_map="auto"
 )
 

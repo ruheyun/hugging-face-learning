@@ -1,2 +1,4 @@
-transformers==5.9.0
+transformers==4.57.1
 accelerate==1.13.0
+hf_transfer==0.1.9
+protobuf==7.35.0
